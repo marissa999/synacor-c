@@ -3,9 +3,9 @@
 #include "stack.h"
 #include "stdio.h"
 
-#define KRED  "\x1B[31m"
-#define KGRN  "\x1B[32m"
-#define KWHT  "\x1B[37m"
+#define KRED "\x1B[31m"
+#define KGRN "\x1B[32m"
+#define KWHT "\x1B[37m"
 
 bool testStack(){
 	bool noTestFailed = true;
