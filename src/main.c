@@ -1,5 +1,6 @@
 #include "main.h"
 #include "unitTests.h"
+#include "stack.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,12 +47,43 @@ int main(const int argc, const char* argv[]){
 
 	};
 	
+	highestStack = createStack();
+
 	// now we can implement the opcodes
 	unsigned short int programCounter = 0;
 	while(true){
 		// halt
 		if (opCode == 0){
 			break;
+		}
+
+		// set
+		if (opCode == 1){
+			*aParam = *bParam;
+			programCounter += 3;
+			continue;
+		}
+
+		// push
+		if (opCode == 2){
+			addToStack(highestStack, *aParam);
+			programCounter += 2;
+			continue;
+		}
+
+		// pop
+		if (opCode == 3){
+			*aParam = highestStack->value;
+			highestStack = decrementStack(highestStack);
+			programCounter += 2;
+			continue;
+		}
+
+		// eq
+		if (opCode == 4){
+			*aParam = *bParam == *cParam;
+			programCounter += 3;
+			continue;
 		}
 
 		// jmp
@@ -65,7 +97,7 @@ int main(const int argc, const char* argv[]){
 			if (*aParam != 0)
 				programCounter = *bParam;
 			else
-			programCounter += 3;
+				programCounter += 3;
 			continue;
 		}
 
@@ -74,7 +106,14 @@ int main(const int argc, const char* argv[]){
 			if (*aParam == 0)
 				programCounter = *bParam;
 			else
-			programCounter += 3;
+				programCounter += 3;
+			continue;
+		}
+
+		// add
+		if (opCode == 9){
+			*aParam = *bParam + *cParam;
+			programCounter += 4;
 			continue;
 		}
 
