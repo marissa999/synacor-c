@@ -13,7 +13,7 @@ bool testStack(){
 	// create bottom of stack
 	struct StackNode* stack = createStack();
 	if (stack->value == 0)
-		printf("%sSuccessfully created an empty stack\r\n", KGRN);
+		printf("%sSuccessfully created an empty stack.\r\n", KGRN);
 	else {
 		printf("%sError while creating a stack...\r\n", KRED);
 		noTestFailed = false;
@@ -22,7 +22,7 @@ bool testStack(){
 	// change value of top of stack
 	stack->value = 10;
 	if (stack->value == 10)
-		printf("%sSuccessfully changed value of stack\r\n", KGRN);
+		printf("%sSuccessfully changed value of stack.\r\n", KGRN);
 	else {
 		printf("%sError while changing the value of the stack...\r\n", KRED);
 		noTestFailed = false;
@@ -31,7 +31,7 @@ bool testStack(){
 	// push to stack
 	stack = addToStack(stack, 40);
 	if (stack->value == 40)
-		printf("%sSuccessfully pushed to stack\r\n", KGRN);
+		printf("%sSuccessfully pushed to stack.\r\n", KGRN);
 	else {
 		printf("%sError while pushing to stack...\r\n", KRED);
 		noTestFailed = false;
@@ -40,7 +40,7 @@ bool testStack(){
 	// push to stack
 	stack = addToStack(stack, 60);
 	if (stack->value == 60)
-		printf("%sSuccessfully pushed to stack\r\n", KGRN);
+		printf("%sSuccessfully pushed to stack.\r\n", KGRN);
 	else {
 		printf("%sError while pushing to stack...\r\n", KRED);
 		noTestFailed = false;
@@ -49,7 +49,7 @@ bool testStack(){
 	// change value of top of stack
 	stack->value = 10;
 	if (stack->value == 10)
-		printf("%sSuccessfully changed value of stack\r\n", KGRN);
+		printf("%sSuccessfully changed value of stack.\r\n", KGRN);
 	else {
 		printf("%sError while changing the value of the stack...\r\n", KRED);
 		noTestFailed = false;
@@ -58,7 +58,7 @@ bool testStack(){
 	// remove top of stack
 	stack = decrementStack(stack);
 	if(stack->value == 40)
-		printf("%sSuccessfully popped from stack\r\n", KGRN);
+		printf("%sSuccessfully popped from stack.\r\n", KGRN);
 	else {
 		printf("%sError while popping from stack...\r\n", KRED);
 		noTestFailed = false;
@@ -67,7 +67,7 @@ bool testStack(){
 	// remove top of stack
 	stack = decrementStack(stack);
 	if(stack->value == 10)
-		printf("%sSuccessfully popped from stack\r\n", KGRN);
+		printf("%sSuccessfully popped from stack.\r\n", KGRN);
 	else {
 		printf("%sError while popping from stack...\r\n", KRED);
 		noTestFailed = false;
@@ -76,7 +76,7 @@ bool testStack(){
 	// change value of top of stack
 	stack->value = 90;
 	if (stack->value == 90)
-		printf("%sSuccessfully changed value of stack\r\n", KGRN);
+		printf("%sSuccessfully changed value of stack.\r\n", KGRN);
 	else {
 		printf("%sError while changing the value of the stack...\r\n", KRED);
 		noTestFailed = false;
@@ -85,7 +85,7 @@ bool testStack(){
 	// push to stack
 	stack = addToStack(stack, 30);
 	if (stack->value == 30)
-		printf("%sSuccessfully pushed to stack\r\n", KGRN);
+		printf("%sSuccessfully pushed to stack.\r\n", KGRN);
 	else {
 		printf("%sError while pushing to stack...\r\n", KRED);
 		noTestFailed = false;
@@ -94,7 +94,7 @@ bool testStack(){
 	// remove top of stack
 	stack = decrementStack(stack);
 	if(stack->value == 90)
-		printf("%sSuccessfully popped from stack\r\n", KGRN);
+		printf("%sSuccessfully popped from stack.\r\n", KGRN);
 	else {
 		printf("%sError while popping from stack...\r\n", KRED);
 		noTestFailed = false;
@@ -122,7 +122,7 @@ bool testOpCodes(){
 }
 
 bool runTests(){
-	printf("%sStart tests now\r\n", KWHT);
+	printf("%sStart tests now.\r\n", KWHT);
 
 	// Test of the stack
 	printf("\r\n");
@@ -166,7 +166,7 @@ bool runTests(){
 		printf("%sAll tests passed.\r\n", KGRN);
 	else
 		printf("%sAt least one test failed...\r\n", KRED);
-	printf("%s", KWHT);
+	printf("%s\r\n", KWHT);
 
 	return testMemoryPassed && testMemoryPassed && testRegisterPassed && testOpCodesPassed;
 }
