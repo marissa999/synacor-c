@@ -62,7 +62,7 @@ int main(const int argc, const char* argv[]){
 
 		// jt
 		if (opCode == 7){
-			if (aParam != 0)
+			if (*aParam != 0)
 				programCounter = *bParam;
 			else
 			programCounter += 3;
@@ -71,7 +71,7 @@ int main(const int argc, const char* argv[]){
 
 		// jf
 		if (opCode == 8){
-			if (aParam == 0)
+			if (*aParam == 0)
 				programCounter = *bParam;
 			else
 			programCounter += 3;
