@@ -47,7 +47,7 @@ int main(const int argc, const char* argv[]){
 
 	};
 	
-	highestStack = createStack();
+	highestStack = CreateStack();
 
 	// now we can implement the opcodes
 	unsigned short int programCounter = 0;
@@ -66,7 +66,7 @@ int main(const int argc, const char* argv[]){
 
 		// push
 		if (opCode == 2){
-			addToStack(highestStack, *aParam);
+			PushToStack(highestStack, *aParam);
 			programCounter += 2;
 			continue;
 		}
@@ -74,7 +74,7 @@ int main(const int argc, const char* argv[]){
 		// pop
 		if (opCode == 3){
 			*aParam = highestStack->value;
-			highestStack = decrementStack(highestStack);
+			highestStack = PopFromStack(highestStack);
 			programCounter += 2;
 			continue;
 		}

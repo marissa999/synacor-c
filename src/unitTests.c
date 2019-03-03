@@ -11,7 +11,7 @@ bool testStack(){
 	bool noTestFailed = true;
 
 	// create bottom of stack
-	struct StackNode* stack = createStack();
+	struct StackNode* stack = CreateStack();
 	if (stack->value == 0)
 		printf("%sSuccessfully created an empty stack.\r\n", KGRN);
 	else {
@@ -29,7 +29,7 @@ bool testStack(){
 	}
 
 	// push to stack
-	stack = addToStack(stack, 40);
+	stack = PushToStack(stack, 40);
 	if (stack->value == 40)
 		printf("%sSuccessfully pushed to stack.\r\n", KGRN);
 	else {
@@ -38,7 +38,7 @@ bool testStack(){
 	}
 
 	// push to stack
-	stack = addToStack(stack, 60);
+	stack = PushToStack(stack, 60);
 	if (stack->value == 60)
 		printf("%sSuccessfully pushed to stack.\r\n", KGRN);
 	else {
@@ -56,7 +56,7 @@ bool testStack(){
 	}
 
 	// remove top of stack
-	stack = decrementStack(stack);
+	stack = PopFromStack(stack);
 	if(stack->value == 40)
 		printf("%sSuccessfully popped from stack.\r\n", KGRN);
 	else {
@@ -65,7 +65,7 @@ bool testStack(){
 	}
 
 	// remove top of stack
-	stack = decrementStack(stack);
+	stack = PopFromStack(stack);
 	if(stack->value == 10)
 		printf("%sSuccessfully popped from stack.\r\n", KGRN);
 	else {
@@ -83,7 +83,7 @@ bool testStack(){
 	}
 
 	// push to stack
-	stack = addToStack(stack, 30);
+	stack = PushToStack(stack, 30);
 	if (stack->value == 30)
 		printf("%sSuccessfully pushed to stack.\r\n", KGRN);
 	else {
@@ -92,7 +92,7 @@ bool testStack(){
 	}
 
 	// remove top of stack
-	stack = decrementStack(stack);
+	stack = PopFromStack(stack);
 	if(stack->value == 90)
 		printf("%sSuccessfully popped from stack.\r\n", KGRN);
 	else {
